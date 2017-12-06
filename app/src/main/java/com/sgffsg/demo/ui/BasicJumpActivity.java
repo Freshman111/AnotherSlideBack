@@ -12,7 +12,7 @@ import com.sgffsg.demo.base.BaseActivity;
 import java.util.Random;
 
 /**
- * Created by liumengkai on 17/12/5.
+ * Created by sgffsg on 17/12/5.
  */
 
 public class BasicJumpActivity extends BaseActivity{

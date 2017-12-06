@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by liumengkai on 16/6/16.
+ * Created by sgffsg on 16/6/16.
  */
 public class LoopViewPagerActivity extends BaseActivity {
 

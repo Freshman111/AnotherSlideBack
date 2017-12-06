@@ -6,9 +6,7 @@ import android.view.ViewGroup;
 
 import java.util.List;
 
-/**
- * Created by zsl on 16/3/24.
- */
+
 public class LoopPagerAdapter extends PagerAdapter {
 
     private List<View> viewList;
