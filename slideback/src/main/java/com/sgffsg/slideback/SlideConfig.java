@@ -8,6 +8,11 @@ import android.support.annotation.FloatRange;
  */
 public class SlideConfig {
 
+    public static final int SHADOW_STYLE_NOMAL=0;//一般阴影
+    public static final int SHADOW_STYLE_WECHAT=1;//微信阴影
+    public static final int SHADOW_STYLE_SNOW_BALL=2;//雪球阴影
+    public static final int SHADOW_STYLE_BYTE_JUMP=3;//头条阴影
+
     @FloatRange(from = 0.0,
             to = 1.0)
     private float mEdgePercent;
@@ -15,8 +20,9 @@ public class SlideConfig {
     @FloatRange(from = 0.0,
             to = 1.0)
     private float mSlideOutPercent;
-    //是否显示成微信样式的滑动返回
-    private boolean mIsWeChatStyle;
+
+    //阴影样式
+    private int shadowStyle;
 
     private SlideConfig() {
     }
@@ -29,14 +35,14 @@ public class SlideConfig {
         return mSlideOutPercent;
     }
 
-    public boolean ismIsWeChatStyle() {
-        return mIsWeChatStyle;
+    public int getShadowStyle() {
+        return shadowStyle;
     }
 
     public SlideConfig(Builder builder) {
         mEdgePercent = builder.edgePercent;
         mSlideOutPercent = builder.slideOutPercent;
-        mIsWeChatStyle=builder.isWeChatStyle;
+        shadowStyle=builder.shadowStyle;
     }
 
     public static class Builder {
@@ -48,7 +54,7 @@ public class SlideConfig {
                 to = 1.0)
         private float slideOutPercent = 0.1f;
 
-        private boolean isWeChatStyle;
+        private int shadowStyle;
         public Builder() {
         }
 
@@ -69,11 +75,10 @@ public class SlideConfig {
             return this;
         }
 
-        public Builder isWeChatStyle(boolean isWeChatStyle) {
-            this.isWeChatStyle = isWeChatStyle;
+        public Builder shadowStyle(int shadowStyle) {
+            this.shadowStyle = shadowStyle;
             return this;
         }
-
     }
 
 }

@@ -53,6 +53,8 @@ public class SlideBackLayout extends FrameLayout{
     private int mCurrentLeft;
     private float mCurrentAlpha=0.5f;
     private float mMinSlidDistantX;
+    //阴影样式
+    private int shadowStyle;
 
     /**
      * How far the panel is offset from its closed position.
@@ -77,7 +79,10 @@ public class SlideBackLayout extends FrameLayout{
         if (config != null) {
             mSlideOutRangePercent=config.getmSlideOutPercent();
             mEdgeRangePercent=config.getmEdgePercent();
-            mIsWeChatStyle=config.ismIsWeChatStyle();
+            shadowStyle=config.getShadowStyle();
+            if (shadowStyle==SlideConfig.SHADOW_STYLE_WECHAT){
+                mIsWeChatStyle=true;
+            }
         }
 
         mScreenWidth = getResources().getDisplayMetrics().widthPixels;
@@ -96,7 +101,16 @@ public class SlideBackLayout extends FrameLayout{
 
         shadowView = new ShadowView(getContext());
         shadowView.setVisibility(INVISIBLE);
-        addView(shadowView,mScreenWidth / 28, LayoutParams.MATCH_PARENT);
+        if (shadowStyle==SlideConfig.SHADOW_STYLE_SNOW_BALL){
+            shadowView.showShadow(false,true);
+            addView(shadowView,mScreenWidth, LayoutParams.MATCH_PARENT);
+        }else if (shadowStyle==SlideConfig.SHADOW_STYLE_BYTE_JUMP){
+            shadowView.showShadow(true,true);
+            addView(shadowView,mScreenWidth , LayoutParams.MATCH_PARENT);
+        }else {
+            shadowView.showShadow(true,false);
+            addView(shadowView,mScreenWidth / 28, LayoutParams.MATCH_PARENT);
+        }
         addView(mContentView);
 
         mEdgeRange = mScreenWidth * mEdgeRangePercent;

@@ -7,6 +7,41 @@
 
     <include layout="@layout/inc_toolbar"/>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="样式效果"/>
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:orientation="horizontal">
+        <RadioButton
+            android:id="@+id/rb_nomal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="普通"/>
+        <RadioButton
+            android:id="@+id/rb_wechat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="微信"/>
+        <RadioButton
+            android:id="@+id/rb_sb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="雪球"/>
+        <RadioButton
+            android:id="@+id/rb_byte_jump"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="头条"/>
+    </RadioGroup>
     <Button
         android:id="@+id/btn_basic"
         android:layout_width="wrap_content"

@@ -12,6 +12,8 @@ import com.sgffsg.slideback.ActivityLifeHelper;
 public class MyApplication extends Application{
     private static MyApplication sInstance;
 
+    private static int shadowType=0;
+
     public static Context getAppContext() {
         return sInstance;
     }
@@ -21,5 +23,13 @@ public class MyApplication extends Application{
         super.onCreate();
         sInstance = this;
         registerActivityLifecycleCallbacks(ActivityLifeHelper.build());
+    }
+
+    public static int getShadowType() {
+        return shadowType;
+    }
+
+    public static void setShadowType(int shadowType) {
+        MyApplication.shadowType = shadowType;
     }
 }

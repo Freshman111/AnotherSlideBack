@@ -26,6 +26,10 @@
             android:screenOrientation="portrait" />
         <activity android:name="com.sgffsg.demo.ui.LoopViewPagerActivity"
             android:screenOrientation="portrait" />
+
+        <meta-data
+            android:name="android.max_aspect"
+            android:value="2.1"/>
     </application>
 
 </manifest>

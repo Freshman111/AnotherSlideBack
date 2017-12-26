@@ -15,6 +15,7 @@ import com.sgffsg.slideback.SlideBackHelper;
 import com.sgffsg.slideback.SlideConfig;
 import com.sgffsg.demo.utils.SystemBarTintManager;
 import com.sgffsg.demo.utils.TitleBarUtils;
+import com.sgffsg.slideback.widget.ShadowView;
 
 /**
  * BaseActivity
@@ -43,8 +44,8 @@ public abstract class BaseActivity extends AppCompatActivity {
         if (isSupportSlideBack()){
             SlideBackHelper.attach(this, ActivityLifeHelper.build(),
                     new SlideConfig.Builder()
-                            .isWeChatStyle(false)
                             .slideOutPercent(0.48f)
+                            .shadowStyle(MyApplication.getShadowType())
                             .create());
         }
         setTitleBarPadding(false);
